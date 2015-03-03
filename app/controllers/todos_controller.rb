@@ -5,16 +5,21 @@ class TodosController < ApplicationController
   end
 
   def create
-  Todo.create(item_params)
+    Todo.create(item_params)
   end
 
-  def delete
-  @todo = Todo.find(params[:id])
-  @todo.delete!
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.update(item_params)
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy!
   end
 
   private
   def item_params
-    params.require(:item).permit(:title, :user_id, :completed)
+    params.require(:item).permit(:title, :completed)
   end
 end
