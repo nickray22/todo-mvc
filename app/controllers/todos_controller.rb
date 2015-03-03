@@ -1,6 +1,9 @@
 class TodosController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
   def create
   Todo.create(item_params)
   end
