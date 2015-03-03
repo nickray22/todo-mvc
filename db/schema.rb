@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150303013245) do
   create_table "todos", force: :cascade do |t|
     t.string   "title"
     t.boolean  "completed"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
